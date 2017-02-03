@@ -84,20 +84,22 @@
                     <form>
                         <div class="form-group">
                             <!-- <label for="userNumber">Número</label> -->
-                            <input type="number" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" ng-model="GameCtrl.userNumber">
+                            <input type="text" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" numbers-only ng-model="GameCtrl.userNumber">
                             <button class="btn btn-info btn-lg" ng-click="GameCtrl.guessNumber()">Probar</button>
                         </div>
 
                         <div ng-if="GameCtrl.gameResult" class="results-container">
+                            Número probado: [ {{GameCtrl.lastsResults[GameCtrl.lastsResults.length-1]}} ]
                             <ul class="gameResults">
                                 <li ng-repeat="n in [] | range:GameCtrl.gameResult.includes">X</li>
                                 <li ng-repeat="n in [] | range:GameCtrl.gameResult.position">_</li>
                                 <li ng-repeat="n in [] | range: (GameCtrl.numSize - GameCtrl.gameResult.includes - GameCtrl.gameResult.position)">&nbsp;</li>
                             </ul>
                         </div>
-                        <div class="lasts-results">
+                        <div class="lasts-results" ng-show="GameCtrl.lastsResults.length>0">
+                            Últimos números consultados:
                             <ul>
-                                <li ng-repeat="res in GameCtrl.lastsResults">{{res}}</li>
+                                <li ng-repeat="res in GameCtrl.lastsResults  track by $index">{{res}}</li>
                             </ul>
                         </div>
                     </form>
@@ -177,7 +179,7 @@
     <script src="js/controllers/ScoreController.min.js"></script>
     <script src="js/services/NumberValidatorService.min.js"></script>
     <script src="vendor/ocmodal/ocModal.min.js"></script>
-
+    <script src="js/services/ScoreService.min.js"></script>
 </body>
 
 </html>

@@ -16,4 +16,5 @@
     };
   })
 
+  app.constant("ENDPOINT", "http://guess-it.tk:8080");
 })();

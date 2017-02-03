@@ -426,6 +426,8 @@ body {
 .gameResults{
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 .gameResults, .gameResults li, .lasts-results ul, .lasts-results ul li{
   list-style: none;
@@ -449,6 +451,17 @@ body {
 .results-container{
     margin-left: 10%;
     margin-right: 10%;
+    font-size: 18px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+.lasts-results{
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; 
+    text-align: center;
+}
+.lasts-results ul{
+  margin-top: 10px;
 }
 .lasts-results ul li{
   float: left;

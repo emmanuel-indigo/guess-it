@@ -5,21 +5,22 @@
 		.module('guess-it')
 		.controller('GameController', GameController);
 
-	GameController.$inject = ["NumberValidatorService","$ocModal"];
+	GameController.$inject = ["NumberValidatorService", "ScoreService","$ocModal"];
 
-	function GameController (NumberValidatorService,$ocModal) {
+	function GameController (NumberValidatorService, ScoreService, $ocmodal) {
 
 		this.NumberValidatorService = NumberValidatorService;
+		this.ScoreService = ScoreService;
 
 		this.numSize = 4;
 
 		this.lastsResults = [];
 
 		this.generateNumber();
+		this.getScores();
 
 		this.ocModal = $ocModal;
-
-
+		this.scores = [];
 	}
 
 	// function to create a random number without repetitions
@@ -51,7 +52,7 @@
     }
 
 	GameController.prototype.guessNumber = function () {
-		if(!this.userNumber || String(this.userNumber).length!=4 || typeof(parseInt(this.userNumber))!='number' ){
+		if(!this.userNumber || this.userNumber.length!=4 || typeof(parseInt(this.userNumber))!='number' ){
 	        alert('El número debe contener 4 digitos');
 	        return;
 	      }
@@ -65,11 +66,14 @@
 	      this.lastsResults.push(angular.copy(this.userNumber))
 
 	      this.userNumber = '';
-
 	}
 
+	GameController.prototype.getScores = function () {
+		var $this = this;
 
-
-
-
+		this.ScoreService.getScores()
+			.then(function (data) {
+				$this.scores = scores;
+			});
+	}
 })();
