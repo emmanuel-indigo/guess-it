@@ -72,7 +72,7 @@
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="bg-primary" id="about" ng-controller="GameController as GameCtrl">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -81,8 +81,8 @@
                     <form>
                         <div class="form-group">
                             <!-- <label for="userNumber">Número</label> -->
-                            <input type="email" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos">
-                            <button class="btn btn-info btn-lg">Probar</button>
+                            <input type="number" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" ng-model="GameCtrl.userNumber">
+                            <button class="btn btn-info btn-lg" ng-click="GameCtrl.guessNumber()">Probar</button>
                         </div>
                     </form>
                 </div>
@@ -152,13 +152,13 @@
     <script src="js/creative.min.js"></script>
 
     <!-- Angular -->
+    <script src="vendor/sugar/sugar.min.js"></script>
     <script src="vendor/angular/angular.min.js"></script>
     <script src="js/app.min.js"></script>
     <script src="js/directives/ReplaceDirective.min.js"></script>
     <script src="js/directives/NumbersOnlyDirective.min.js"></script>
     <script src="js/controllers/GameController.min.js"></script>
     <script src="js/services/NumberValidatorService.min.js"></script>
-    <script src="js/sugar/sugar.min.js"></script>
     <script src="vendor/ocmodal/ocModal.min.js"></script>
 
 </body>
