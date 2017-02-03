@@ -56,10 +56,12 @@
 
 	      ++this.tries;
 
-	      var response = this.NumberValidatorService.validate(this.secretNumber, this.userNumber);
-	      console.log('intentos: '+this.tries);
-	      console.log(response)
+	      this.gameResult = this.NumberValidatorService.validate(this.secretNumber, String(this.userNumber) );
+
+	      console.log(this.gameResult)
 	}
+
+
 
 
 
