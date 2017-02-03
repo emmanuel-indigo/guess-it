@@ -7,7 +7,7 @@
 
 	GameController.$inject = ["NumberValidatorService", "ScoreService","$ocModal"];
 
-	function GameController (NumberValidatorService, ScoreService, $ocmodal) {
+	function GameController (NumberValidatorService, ScoreService, $ocModal) {
 
 		this.NumberValidatorService = NumberValidatorService;
 		this.ScoreService = ScoreService;
@@ -17,10 +17,10 @@
 		this.lastsResults = [];
 
 		this.generateNumber();
-		this.getScores();
 
 		this.ocModal = $ocModal;
 		this.scores = [];
+		this.name = null;
 	}
 
 	// function to create a random number without repetitions
@@ -73,6 +73,16 @@
 		this.ScoreService.getScores()
 			.then(function (data) {
 				$this.scores = data;
+			});
+	}
+
+	GameController.prototype.saveScore = function () {
+		var $this = this;
+		var score = { name: this.name, score: this.tries };
+
+		this.ScoreService.saveScore(score)
+			.then(function () {
+				$this.getScores();
 			});
 	}
 })();
