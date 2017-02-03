@@ -70,6 +70,12 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/sugar/dist/sugar.min.js'])
         .pipe(gulp.dest('vendor/sugar'))
 
+    gulp.src(['node_modules/ocmodal/dist/ocModal.min.js'])
+        .pipe(gulp.dest('vendor/ocmodal'))
+
+    gulp.src(['node_modules/ocmodal/dist/css/ocModal.light.min.css'])
+        .pipe(gulp.dest('vendor/ocmodal'))
+
     gulp.src([
             'node_modules/font-awesome/**',
             '!node_modules/font-awesome/**/*.map',

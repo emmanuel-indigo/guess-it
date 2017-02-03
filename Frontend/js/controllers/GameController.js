@@ -5,9 +5,9 @@
 		.module('guess-it')
 		.controller('GameController', GameController);
 
-	GameController.$inject = ["NumberValidatorService", "ScoreService"];
+	GameController.$inject = ["NumberValidatorService", "ScoreService","$ocModal"];
 
-	function GameController (NumberValidatorService, ScoreService) {
+	function GameController (NumberValidatorService, ScoreService, $ocmodal) {
 
 		this.NumberValidatorService = NumberValidatorService;
 		this.ScoreService = ScoreService;
@@ -19,6 +19,7 @@
 		this.generateNumber();
 		this.getScores();
 
+		this.ocModal = $ocModal;
 		this.scores = [];
 	}
 

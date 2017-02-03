@@ -1,5 +1,5 @@
 (function () {
-  var app = angular.module("guess-it", []);
+  var app = angular.module("guess-it", ['oc.modal']);
 
   Sugar.extend();
 
