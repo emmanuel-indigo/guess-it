@@ -52,6 +52,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a oc-modal-open="'partials/maxscore.html'">Puntajes</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" data-toggle="modal" data-target="#myModal">FAQ's</a>
                     </li>
                 </ul>
@@ -124,7 +127,7 @@
     </section>
 
     <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
+    <div id="myModal" class="modal fade" role="dialog" style="display: none">
       <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -171,6 +174,7 @@
     <script src="js/directives/ReplaceDirective.min.js"></script>
     <script src="js/directives/NumbersOnlyDirective.min.js"></script>
     <script src="js/controllers/GameController.min.js"></script>
+    <script src="js/controllers/ScoreController.min.js"></script>
     <script src="js/services/NumberValidatorService.min.js"></script>
     <script src="vendor/ocmodal/ocModal.min.js"></script>
 
