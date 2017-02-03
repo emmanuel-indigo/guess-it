@@ -22,9 +22,9 @@
 		    	</thead>
 		    	<tbody>
 			      <tr ng-repeat="scr in GameCtrl.scores">
-			        <td>1</td>
-			        <td>User</td>
-			        <td>5</td>
+			        <td>{{ $index + 1 }}</td>
+			        <td>{{ scr.name }}</td>
+			        <td>{{ scr.score }}</td>
 			      </tr>
   				</tbody>
 		  	</table>
