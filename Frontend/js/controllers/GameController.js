@@ -51,7 +51,7 @@
     }
 
 	GameController.prototype.guessNumber = function () {
-		if(!this.userNumber || String(this.userNumber).length!=4 || typeof(parseInt(this.userNumber))!='number' ){
+		if(!this.userNumber || this.userNumber.length!=4 || typeof(parseInt(this.userNumber))!='number' ){
 	        alert('El número debe contener 4 digitos');
 	        return;
 	      }
