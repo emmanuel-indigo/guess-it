@@ -5,19 +5,21 @@
 		.module('guess-it')
 		.controller('GameController', GameController);
 
-	GameController.$inject = ["NumberValidatorService"];
+	GameController.$inject = ["NumberValidatorService", "ScoreService"];
 
-	function GameController (NumberValidatorService) {
+	function GameController (NumberValidatorService, ScoreService) {
 
 		this.NumberValidatorService = NumberValidatorService;
+		this.ScoreService = ScoreService;
 
 		this.numSize = 4;
 
 		this.lastsResults = [];
 
 		this.generateNumber();
+		this.getScores();
 
-
+		this.scores = [];
 	}
 
 	// function to create a random number without repetitions
@@ -63,11 +65,14 @@
 	      this.lastsResults.push(angular.copy(this.userNumber))
 
 	      this.userNumber = '';
-
 	}
 
+	GameController.prototype.getScores = function () {
+		var $this = this;
 
-
-
-
+		this.ScoreService.getScores()
+			.then(function (data) {
+				$this.scores = scores;
+			});
+	}
 })();

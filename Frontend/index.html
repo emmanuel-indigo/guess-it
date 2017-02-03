@@ -80,7 +80,7 @@
                     <form>
                         <div class="form-group">
                             <!-- <label for="userNumber">Número</label> -->
-                            <input type="number" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" ng-model="GameCtrl.userNumber">
+                            <input type="text" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" numbers-only ng-model="GameCtrl.userNumber">
                             <button class="btn btn-info btn-lg" ng-click="GameCtrl.guessNumber()">Probar</button>
                         </div>
 
@@ -171,7 +171,7 @@
     <script src="js/directives/NumbersOnlyDirective.min.js"></script>
     <script src="js/controllers/GameController.min.js"></script>
     <script src="js/services/NumberValidatorService.min.js"></script>
-
+    <script src="js/services/ScoreService.min.js"></script>
 </body>
 
 </html>
