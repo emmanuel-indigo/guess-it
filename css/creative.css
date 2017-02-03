@@ -414,3 +414,9 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+.btn-info{
+  margin-top: 1em;
+}
+.btn-lg{
+  font-size: 1.05em;
+}
