@@ -17,10 +17,10 @@
 		this.lastsResults = [];
 
 		this.generateNumber();
-		this.getScores();
 
 		this.ocModal = $ocModal;
 		this.scores = [];
+		this.name = null;
 	}
 
 	// function to create a random number without repetitions
@@ -80,6 +80,16 @@
 						//console.log('modal1 opened from url');
 					}
 				})
+			});
+	}
+
+	GameController.prototype.saveScore = function () {
+		var $this = this;
+		var score = { name: this.name, score: this.tries };
+
+		this.ScoreService.saveScore(score)
+			.then(function () {
+				$this.getScores();
 			});
 	}
 })();
