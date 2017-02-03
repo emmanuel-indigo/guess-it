@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="guess-it">
 
 <head>
 
@@ -34,7 +34,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-app="guessApp" ng-controller="mainCtrl">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -149,6 +149,13 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+    <!-- Angular -->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="js/directives/ReplaceDirective.min.js"></script>
+    <script src="js/directives/NumbersOnlyDirective.min.js"></script>
+    <script src="js/controllers/GameController.min.js"></script>
 
 </body>
 
