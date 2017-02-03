@@ -85,15 +85,17 @@
                         </div>
 
                         <div ng-if="GameCtrl.gameResult" class="results-container">
+                            Número probado: [ {{GameCtrl.lastsResults[GameCtrl.lastsResults.length-1]}} ]
                             <ul class="gameResults">
                                 <li ng-repeat="n in [] | range:GameCtrl.gameResult.includes">X</li>
                                 <li ng-repeat="n in [] | range:GameCtrl.gameResult.position">_</li>
                                 <li ng-repeat="n in [] | range: (GameCtrl.numSize - GameCtrl.gameResult.includes - GameCtrl.gameResult.position)">&nbsp;</li>
                             </ul>
                         </div>
-                        <div class="lasts-results">
+                        <div class="lasts-results" ng-show="GameCtrl.lastsResults.length>0">
+                            Últimos números consultados:
                             <ul>
-                                <li ng-repeat="res in GameCtrl.lastsResults">{{res}}</li>
+                                <li ng-repeat="res in GameCtrl.lastsResults  track by $index">{{res}}</li>
                             </ul>
                         </div>
                     </form>
