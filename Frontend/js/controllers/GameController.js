@@ -13,6 +13,8 @@
 
 		this.numSize = 4;
 
+		this.lastsResults = [];
+
 		this.generateNumber();
 
 
@@ -58,7 +60,10 @@
 
 	      this.gameResult = this.NumberValidatorService.validate(this.secretNumber, String(this.userNumber) );
 
-	      console.log(this.gameResult)
+	      this.lastsResults.push(angular.copy(this.userNumber))
+
+	      this.userNumber = '';
+
 	}
 
 
