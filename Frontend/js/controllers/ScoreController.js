@@ -5,11 +5,10 @@
 		.module('guess-it')
 		.controller('ScoreController', ScoreController);
 
-	ScoreController.$inject = [];
+	ScoreController.$inject = ["$init"];
 
-	function ScoreController () {
-
-		
+	function ScoreController ($init) {
+		this.scores = $init.scores;
 	}
 
 })();

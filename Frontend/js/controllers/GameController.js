@@ -75,7 +75,9 @@
 				$this.scores = data;
 				$this.ocModal.open({
 					url: 'partials/maxscore.html',
+					controller: 'ScoreController as GameCtrl',
 					cls: 'test fade-in',
+					init: { scores: data },
 					onOpen: function() {
 						//console.log('modal1 opened from url');
 					}
