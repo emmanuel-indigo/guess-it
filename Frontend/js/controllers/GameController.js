@@ -73,7 +73,7 @@
 
 		this.ScoreService.getScores()
 			.then(function (data) {
-				$this.scores = scores;
+				$this.scores = data;
 			});
 	}
 })();

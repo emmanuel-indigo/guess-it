@@ -5,7 +5,7 @@ var ScoreModel = mongoose.model('Score', ScoreSchema);
 
 class ScoreService {
 
-	getScores(callback) { ScoreModel.find({}).exec(callback) }
+	getScores(callback) { ScoreModel.find({}).sort({ score: 1 }).exec(callback) }
 
 	saveScore(score, callback) { ScoreModel.save(new ScoreSchema(score), callback) }
 }
