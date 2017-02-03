@@ -20,6 +20,8 @@
 			else if (computerNumber.includes(userNumber.at(i))) results.includes++;
 		}
 
+		results.none = !results.includes && !results.position;
+
 		return results;
 	}
 })();
