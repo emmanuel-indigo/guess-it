@@ -21,7 +21,6 @@
 	// function to create a random number without repetitions
     GameController.prototype.generateNumber = function(){
 
-    	console.log('generated')
       // create empty array
       var generated = [];
 
@@ -41,7 +40,10 @@
         numbers.splice(rnd,1);
       }    
       // copy generated number into angular scope variable
+      generated = generated.join('')
+      console.log(generated)
       this.secretNumber = angular.copy(generated);
+      console.log(this.secretNumber);
     }
 
 	GameController.prototype.guessNumber = function () {
