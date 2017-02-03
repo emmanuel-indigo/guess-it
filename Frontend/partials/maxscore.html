@@ -9,7 +9,9 @@
       </div>
 
       <div class="modal-body">
+
         <div class="table-responsive">
+        	{{GameCtrl.scores}}
 		  	<table class="table table-striped">
 		    	<thead>
 			      <tr>
@@ -19,7 +21,7 @@
 			      </tr>
 		    	</thead>
 		    	<tbody>
-			      <tr>
+			      <tr ng-repeat="scr in GameCtrl.scores">
 			        <td>1</td>
 			        <td>User</td>
 			        <td>5</td>
