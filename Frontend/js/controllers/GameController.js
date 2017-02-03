@@ -49,7 +49,13 @@
 	        alert('El número debe contener 4 digitos');
 	        return;
 	      }
-	      var response = this.NumberValidatorService.validate(1234, 2344)
+	      if(!this.tries)
+	      	this.tries = 0;
+
+	      ++this.tries;
+
+	      var response = this.NumberValidatorService.validate(this.secretNumber, this.userNumber);
+	      console.log('intentos: '+this.tries);
 	      console.log(response)
 	}
 
