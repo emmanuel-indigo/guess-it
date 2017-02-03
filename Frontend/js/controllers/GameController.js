@@ -7,7 +7,7 @@
 
 	GameController.$inject = ["NumberValidatorService", "ScoreService","$ocModal"];
 
-	function GameController (NumberValidatorService, ScoreService, $ocmodal) {
+	function GameController (NumberValidatorService, ScoreService, $ocModal) {
 
 		this.NumberValidatorService = NumberValidatorService;
 		this.ScoreService = ScoreService;
@@ -73,6 +73,13 @@
 		this.ScoreService.getScores()
 			.then(function (data) {
 				$this.scores = data;
+				$this.ocModal.open({
+					url: 'partials/maxscore.html',
+					cls: 'test fade-in',
+					onOpen: function() {
+						//console.log('modal1 opened from url');
+					}
+				})
 			});
 	}
 })();
