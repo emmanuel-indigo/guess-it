@@ -13,6 +13,8 @@
 
 		this.numSize = 4;
 
+		this.lastsResults = [];
+
 		this.generateNumber();
 
 
@@ -56,10 +58,15 @@
 
 	      ++this.tries;
 
-	      var response = this.NumberValidatorService.validate(this.secretNumber, this.userNumber);
-	      console.log('intentos: '+this.tries);
-	      console.log(response)
+	      this.gameResult = this.NumberValidatorService.validate(this.secretNumber, String(this.userNumber) );
+
+	      this.lastsResults.push(angular.copy(this.userNumber))
+
+	      this.userNumber = '';
+
 	}
+
+
 
 
 

@@ -84,6 +84,19 @@
                             <input type="number" class="form-control" id="userNumber" name="userNumber" aria-describedby="" placeholder="Ingresa un número de 4 dígitos" maxlength="4" ng-model="GameCtrl.userNumber">
                             <button class="btn btn-info btn-lg" ng-click="GameCtrl.guessNumber()">Probar</button>
                         </div>
+
+                        <div ng-if="GameCtrl.gameResult" class="results-container">
+                            <ul class="gameResults">
+                                <li ng-repeat="n in [] | range:GameCtrl.gameResult.includes">X</li>
+                                <li ng-repeat="n in [] | range:GameCtrl.gameResult.position">_</li>
+                                <li ng-repeat="n in [] | range: (GameCtrl.numSize - GameCtrl.gameResult.includes - GameCtrl.gameResult.position)">&nbsp;</li>
+                            </ul>
+                        </div>
+                        <div class="lasts-results">
+                            <ul>
+                                <li ng-repeat="res in GameCtrl.lastsResults">{{res}}</li>
+                            </ul>
+                        </div>
                     </form>
                 </div>
             </div>
