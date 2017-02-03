@@ -36,7 +36,7 @@
 
 </head>
 
-<body id="page-top" ng-app="guessApp" ng-controller="mainCtrl">
+<body id="page-top" ng-app="guessApp" ng-controller="GameController as GameCtrl">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -52,7 +52,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a>Puntajes</a>
+                        <a href="#" ng-click="GameCtrl.getScores()">Puntajes</a>
                     </li>
                     <li>
                         <a class="page-scroll" data-toggle="modal" data-target="#myModal">FAQ's</a>
@@ -75,7 +75,7 @@
         </div>
     </header>
 
-    <section class="bg-primary" id="about" ng-controller="GameController as GameCtrl">
+    <section class="bg-primary" id="about">
         <div class="container" ng-show="GameCtrl.gameResult.position!=4">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
