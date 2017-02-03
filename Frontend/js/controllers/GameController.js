@@ -43,7 +43,6 @@
       }    
       // copy generated number into angular scope variable
       generated = generated.join('')
-      console.log(generated)
       this.secretNumber = angular.copy(generated);
       console.log(this.secretNumber);
     }
