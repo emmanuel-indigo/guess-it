@@ -9,14 +9,14 @@
 	}
 
 	NumberValidatorService.prototype.validate = function (computerNumber, userNumber) {
-		computerNumber = String.toString(computerNumber);
-		userNumber = String.toString(userNumber);
+		computerNumber = computerNumber.toString();
+		userNumber = userNumber.toString();
 
 		if (computerNumber.length !== userNumber.length) return { none: true };
 
 		var results = { includes: 0, position: 0, none: false };
 		for(var i = 0; i < computerNumber.length; i++) {
-			if (computerNumber.includes(userNumber.at(i), i)) results.position++;
+			if (computerNumber.at(i) === userNumber.at(i)) results.position++;
 			else if (computerNumber.includes(userNumber.at(i))) results.includes++;
 		}
 
