@@ -67,6 +67,9 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/angular/angular.min.js'])
         .pipe(gulp.dest('vendor/angular'))
 
+    gulp.src(['node_modules/sugar/dist/sugar.min.js'])
+        .pipe(gulp.dest('vendor/sugar'))
+
     gulp.src([
             'node_modules/font-awesome/**',
             '!node_modules/font-awesome/**/*.map',
@@ -91,7 +94,7 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['copy', 'browserSync', 'less', 'minify-css', 'minify-js'], function() {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/**/*.js', ['minify-js']);
